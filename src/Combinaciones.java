@@ -36,7 +36,11 @@ public class Combinaciones {
 
         for (String letra : letras) {
 
+            if (!combinacion_actual.contains(letra)) {
+
             generar_combinaciones(letras, combinacion_actual + letra, longitud - 1);
+
+        }
 
         }
 
