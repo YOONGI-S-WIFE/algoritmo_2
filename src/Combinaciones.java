@@ -18,15 +18,15 @@ public class Combinaciones {
 
     public void implementacion_combinaciones(ArrayList<String> letras) {
 
-        generar_combinaciones(letras, "", letras.size());
+        generar_combinaciones(letras, "", letras.size(), new boolean [letras.size()]);
 
     }
 
-    private void generar_combinaciones(ArrayList<String> letras, String combinacion_actual, int longitud) {
+    private void generar_combinaciones(ArrayList<String> letras, String combinacion_actual, int longitud, boolean[] letras_usadas) {
 
         if (longitud == 0) {
 
-            System.out.println("la combinacion numero " + i + " es " + combinacion_actual);
+            System.out.println("La combinación número " + i + " es " + combinacion_actual);
 
             i = i + 1;
 
@@ -34,16 +34,20 @@ public class Combinaciones {
 
         }
 
-        for (String letra : letras) {
+            for (int j = 0; j < letras.size(); j++) {
 
-            if (!combinacion_actual.contains(letra)) {
+                if (!letras_usadas[j]) {
 
-            generar_combinaciones(letras, combinacion_actual + letra, longitud - 1);
+                letras_usadas[j] = true;
+
+                generar_combinaciones(letras, combinacion_actual + letras.get(j), longitud - 1, letras_usadas);
+
+                letras_usadas[j] = false;
+
+            }
 
         }
-
-        }
-
+    
     }
 
 }

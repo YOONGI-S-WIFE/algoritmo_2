@@ -60,10 +60,10 @@ public class Validaciones {
             try {
                     
                     numero_de_letras = leer.nextInt();
-                    leer.nextLine();
         
                     if (numero_de_letras > 0 && numero_de_letras < 6) {
 
+                        leer.nextLine();
                         seguir = false;
                         
                     } else {
@@ -74,8 +74,8 @@ public class Validaciones {
         
             } catch (Exception e) {
         
+                leer.nextLine();
                 System.out.println("debes digitar un numero valido, por favor intentalo otra vez");
-                leer.next();
         
             }
     
@@ -122,10 +122,11 @@ public class Validaciones {
             try {
 
                 System.out.println("por favor digita una letra");
-                letra = leer.nextLine();
+                letra = leer.next();
 
                 if (validar_letra(letra) == true) {
 
+                    leer.nextLine();
                     seguir = false;
 
                     lista_letras.add(letra_validada);
@@ -138,8 +139,8 @@ public class Validaciones {
                 
             } catch (Exception e) {
 
-                System.out.println("verifica ya que insertaste mas de 1 letra, un espacio blanco o un caracter invalido");
-                leer.next();
+                System.out.println("verifica ya que insertaste una opcion invalida que puede ser: \n mas de una letra \n espacio en blanco \n numero \n caracter especial");
+                leer.nextLine();
 
             }
 

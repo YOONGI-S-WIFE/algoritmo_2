@@ -5,7 +5,7 @@ public class Inicio {
 
     public void menu () {
 
-        System.out.println("hola usuario 🤗");
+        System.out.println("hola usuario ");
         System.out.println("el dia de hoy me daras un maximo de 5 letras");
         System.out.println("te preguntaras para que quiero 5 letras, ¿cierto?");
         System.out.println("en base a las letras que me des te dare todas las posibles combinaciones de esas letras");
